@@ -14,15 +14,28 @@ public abstract class SearchState {
 
   // change from search2 - need to give local cost
   protected int localCost;
+  //private Coords point;
 //A*
 // protected int estRemCost;
 
   /**
    * accessor for local cost
    */
+  /*public SearchState(int lc, Coords pt ) {
+	  localCost=lc;
+	  point=pt;
+  }
+  
+  public int getStateX(){
+	  return point.getx();
+  }
 
+ public int getStateY() {
+	 return point.gety();
+ }
+ */
   public int getLocalCost() {
-    return localCost;
+     return localCost;
   }
 /*  
 //A*

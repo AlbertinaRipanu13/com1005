@@ -1,16 +1,19 @@
 
 public class RamblersSearch extends Search {
 	 private TerrainMap map; //map we're searching
-	  private String goal;//goal city
+	  private Coords goal;//goal point
 	  
 	  public TerrainMap getMap(){
 		  return map;
 	  }
-     public String getGoal(){
-		  return goal;
+     public int getGoalX(){
+		  return goal.getx();
 	  }
 
-     public RamblersSearch(TerrainMap m, String g){
+     public int getGoalY() {
+    	 return goal.gety();
+     }
+     public RamblersSearch(TerrainMap m, Coords g){
 		  map=m;
 		  goal=g;
 	  }
