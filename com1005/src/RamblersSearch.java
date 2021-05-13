@@ -1,9 +1,9 @@
 
 public class RamblersSearch extends Search {
 	 private TerrainMap map; //map we're searching
-	  private Coords goal;//goal point
+	 private Coords goal;//goal point
 	  
-	  public TerrainMap getMap(){
+	 public TerrainMap getMap(){
 		  return map;
 	  }
      public int getGoalX(){

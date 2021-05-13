@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						import java.util.ArrayList;
 
 public class RamblersState extends SearchState {
 
@@ -42,47 +42,51 @@ public class RamblersState extends SearchState {
 			TerrainMap map=rsearcher.getMap();
 			int[][] tmap=map.getTmap();//nu stiu daca e declarat ok
 			ArrayList<SearchState> succs = new ArrayList();
-			int lc=0;//de lucrat la local cost 
+			int lc=0;
 			int x=point.getx();
 			int y=point.gety();
 			
-			if(x>=0 && x<map.getWidth()-1)
-			{
+			//succesor E
+			if(x>=0 && x<map.getWidth()-1){
 				if(tmap[y][x]>=tmap[y][x+1])
 					lc=1;
 				else 
 					lc=1+Math.abs(tmap[y][x+1]-tmap[y][x]);
-				succs.add(lc, Coords(y,x+1));}
+				succs.add(new RamblersState (new Coords(y,x+1),lc));}
 			
+			//succesor W
 		    if(x>0 && x<=map.getWidth()-1) {
 		    	if(tmap[y][x]>=tmap[y][x-1])
 					lc=1;
 				else 
 					lc=1+Math.abs(tmap[y][x-1]-tmap[y][x]);
-		    	succs.add(lc, Coords(y,x-1));}
+		    	succs.add(new RamblersState(new Coords(y,x-1),lc));}
 		    
+		    //succesor S
 		    if(y>=0 && y<map.getDepth()-1) {
 		    	if(tmap[y][x]>=tmap[y+1][x])
 					lc=1;
 				else 
 					lc=1+Math.abs(tmap[y+1][x]-tmap[y][x]);
-				succs.add(lc, Coords(y+1,x));}
+				succs.add(new RamblersState(new Coords(y+1,x),lc));}
 		    
+		    //succesor N
 			if(y>0 && y<=map.getDepth()-1) {
 				if(tmap[y][x]>=tmap[y-1][x])
 					lc=1;
 				else 
 					lc=1+Math.abs(tmap[y-1][x]-tmap[y][x]);
-			    succs.add(lc, Coords(y-1,x));}
+			    succs.add(new RamblersState(new Coords(y-1,x),lc));}
 			
-			return succs;
+			return succs; 
 		}
 
 		@Override
 		boolean sameState(SearchState n2) {
 			// TODO Auto-generated method stub
 			RamblersState n=(RamblersState) n2;
-			
+			if((n.getPointx()==point.getx())&&(n.getPointy()==getPointy()))
+				return true;
 			return false;
 		}
 
