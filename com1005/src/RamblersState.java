@@ -1,5 +1,4 @@
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						import java.util.ArrayList;
-
+import java.util.*;
 public class RamblersState extends SearchState {
 
 	//point for this state
@@ -89,6 +88,9 @@ public class RamblersState extends SearchState {
 				return true;
 			return false;
 		}
-
+		
+		public String toString() {
+		return point.gety()+"."+ point.getx();
+		}
 
 }

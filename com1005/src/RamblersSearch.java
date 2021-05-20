@@ -1,4 +1,4 @@
-
+import java.util.*;
 public class RamblersSearch extends Search {
 	 private TerrainMap map; //map we're searching
 	 private Coords goal;//goal point
@@ -17,4 +17,5 @@ public class RamblersSearch extends Search {
 		  map=m;
 		  goal=g;
 	  }
+  
 }
